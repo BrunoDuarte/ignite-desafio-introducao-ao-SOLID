@@ -1,0 +1,49 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Condominios API",
+    "description": "A maior plataforma de administração de condominios do Brasil",
+    "version": "1.0.0",
+    "contact": {
+      "email": "fbruno.c.duarte@gmail.com"
+    }
+  },
+  "paths": {
+    "/users": {
+      "post": {
+        "tags": ["User"],
+        "summary": "Create User",
+        "description": "Create a new user",
+        "requestBody": {
+          "content": {
+            "application/Json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "Bruno Duarte",
+                  "email": "fbruno.c.duarte@gmail.com"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }, 
+          "400": {
+            "description": "Email already in user!"
+          }
+        }
+      }
+    }
+  }
+}
